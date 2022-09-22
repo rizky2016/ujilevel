@@ -5,12 +5,12 @@
 
         $ID = $_POST['ID'];
         $Nama = $_POST['Nama'];
-        $Alamat = $_POST['Alamat'];
-        $TanggalLahir = $_POST['TanggalLahir'];
         $Kelamin = $_POST['Kelamin'];
+        $TanggalLahir = $_POST['TanggalLahir'];
+        $Alamat = $_POST['Alamat'];
         $Kelas = $_POST['Kelas'];
 
-        $sql =" UPDATE `ujilevel` SET Nama ='$Nama',Alamat ='$Alamat',TanggalLahir ='$TanggalLahir',Kelamin ='$Kelamin',Kelas ='$Kelas'WHERE ID = '$ID'";
+        $sql =" UPDATE `ujilevel` SET Nama ='$Nama',Kelamin ='$Kelamin',TanggalLahir ='$TanggalLahir',Alamat ='$Alamat',Kelas ='$Kelas'WHERE ID = '$ID'";
         $query = mysqli_query($connect, $sql);
 
         if($query){

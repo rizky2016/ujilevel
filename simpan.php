@@ -5,13 +5,13 @@
 
         $ID = $_POST['ID'];
         $Nama = $_POST['Nama'];
-        $Alamat = $_POST['Alamat'];
-        $TanggalLahir = $_POST['TanggalLahir'];
         $Kelamin = $_POST['Kelamin'];
+        $TanggalLahir = $_POST['TanggalLahir'];
+        $Alamat = $_POST['Alamat'];
         $Kelas = $_POST['Kelas'];
 
-        $sql = "INSERT INTO ujilevel ( ID, Nama, Alamat, TanggalLahir, Kelamin, Kelas)
-        VALUES ('$ID', '$Nama' , '$Alamat' , '$TanggalLahir' , '$Kelamin' , '$Kelas')";
+        $sql = "INSERT INTO ujilevel ( ID, Nama, Kelamin, TanggalLahir, Alamat, Kelas)
+        VALUES ('$ID', '$Nama' , '$Kelamin' , '$TanggalLahir' , '$Alamat' , '$Kelas')";
         $query = mysqli_query($connect, $sql);
 
         if($query){

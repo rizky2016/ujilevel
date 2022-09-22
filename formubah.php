@@ -66,9 +66,9 @@
                         <td> <input type="text" name="Nama" id="long" value="<?php echo $data['Nama'] ?>"></label></td>
                     </tr>
                     <tr>
-                        <td><p><label>Alamat</p></td>
+                        <td><p><label>Kelamin</p></td>
                         <td>:</td>
-                        <td> <input type="text" name="Alamat" id="long" value="<?php echo $data['Alamat'] ?>"></label></td>
+                        <td> <input type="text" name="Kelamin" id="long" value="<?php echo $data['Kelamin'] ?>"></label></td>
                     </tr>
                     <tr>
                         <td><p><label>Tanggal-Lahir</p></td>
@@ -76,9 +76,9 @@
                         <td> <input type="date" name="TanggalLahir" id="long" value="<?php echo $data['TanggalLahir'] ?>"></label></td>
                     </tr>
                     <tr>
-                        <td><p><label>Kelamin</p></td>
+                        <td><p><label>Alamat</p></td>
                         <td>:</td>
-                        <td> <input type="text" name="Kelamin" id="long" value="<?php echo $data['Kelamin'] ?>"></label></td>
+                        <td> <input type="text" name="Alamat" id="long" value="<?php echo $data['Alamat'] ?>"></label></td>
                     </tr>
                     <tr>
                         <td><p><label>Kelas</p></td>

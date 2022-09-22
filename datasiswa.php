@@ -23,6 +23,7 @@
 
 <body>
 
+
     <h1 class="judul-iky">Iky-Adyt</h1>
 
     <div class="kotak-siswa">
@@ -43,33 +44,42 @@
             <a href="siswa.html" class="text-create">CREATE</a>
         </div>
 
+        <form action="search.php" method="get">
+	        <input type="text" name="cari" class="textsearch">
+	        <input type="submit" value="Search" class="submitsearch">
+        </form>
+
         <table border="1">
                 <tr>
                     <th>ID</th>
                     <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>Tanggal-Lahir</th>
                     <th>Kelamin</th>
+                    <th>Tanggal-Lahir</th>
+                    <th>Alamat</th>
                     <th>Kelas</th>
                     <th>Aksi</th>
                 </tr>
                 <?php
             $sql = "select * FROM ujilevel";
             $query = mysqli_query($connect,$sql);
+            
 
             while($data = mysqli_fetch_array($query)){
                 echo"
                 <tr>
                     <td>$data[ID]</td>
                     <td>$data[Nama]</td>
-                    <td>$data[Alamat]</td>
-                    <td>$data[TanggalLahir]</td>
                     <td>$data[Kelamin]</td>
+                    <td>$data[TanggalLahir]</td>
+                    <td>$data[Alamat]</td>
                     <td>$data[Kelas]</td>
                     <td>
     
-                        <a href='formubah.php?ID=".$data['ID']."'>Edit</a>
-                        <a href='hapus.php?ID=".$data['ID']."'>Hapus</a>
+                    <div class='kotakaja'><a href='formubah.php?ID=".$data['ID']."' class='button'>Edit</a></div>
+
+                    <div class='kotakajaa'><a href='hapus.php?ID=".$data['ID']."' class='button'>Hapus</a></div>
+                       
+                     
     
                     </td>
             </tr>

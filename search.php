@@ -1,7 +1,17 @@
 <?php
-    include 'konek.php';
-?>
 
+    include 'konek.php';
+
+    if(isset($_GET['cari'])){
+        $cari = $_GET['cari'];
+        
+        $sql = "SELECT * FROM ujilevel WHERE ID='$cari'";
+        $query = mysqli_query($connect, $sql);				
+    }else{
+        $query = mysqli_query("SELECT * FROM ujilevel");;
+    }
+       
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Siswa</title>
-    <link rel="stylesheet" href="databarang.css">
+    <link rel="stylesheet" href="search.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +32,7 @@
 </head>
 
 <body>
+
 
     <h1 class="judul-iky">Iky-Adyt</h1>
 
@@ -39,44 +50,37 @@
             <h1 class="uji-level">Uji Level Kelas 11 </h1>
         </div>
 
-        <div class="create">
-            <a href="barang.html" class="text-create">CREATE</a>
-        </div>
-
-        <form action="searchbrg.php" method="get">
-	        <input type="text" name="cari" class="textsearch">
-	        <input type="submit" value="Search" class="submitsearch">
-        </form>
 
         <table border="1">
                 <tr>
                     <th>ID</th>
                     <th>Nama</th>
-                    <th>Merek</th>
-                    <th>Tipe</th>
-                    <th>Metode</th>
+                    <th>Kelamin</th>
+                    <th>Tanggal-Lahir</th>
+                    <th>Alamat</th>
                     <th>Kelas</th>
                     <th>Aksi</th>
                 </tr>
                 <?php
-            $sql = "select * FROM   barang";
-            $query = mysqli_query($connect,$sql);
+            
+            
 
             while($data = mysqli_fetch_array($query)){
                 echo"
                 <tr>
                     <td>$data[ID]</td>
                     <td>$data[Nama]</td>
-                    <td>$data[Merek]</td>
-                    <td>$data[Tipe]</td>
-                    <td>$data[Metode]</td>
+                    <td>$data[Kelamin]</td>
+                    <td>$data[TanggalLahir]</td>
+                    <td>$data[Alamat]</td>
                     <td>$data[Kelas]</td>
                     <td>
     
-                    <div class='kotakaja'><a href='formubahbrg.php?ID=".$data['ID']."' class='button'>Edit</a></div>
+                    <div class='kotakaja'><a href='formubah.php?ID=".$data['ID']."' class='button'>Edit</a></div>
 
-                    <div class='kotakajaa'><a href='hapusbrg.php?ID=".$data['ID']."' class='button'>Hapus</a></div>
+                    <div class='kotakajaa'><a href='hapus.php?ID=".$data['ID']."' class='button'>Hapus</a></div>
                        
+                     
     
                     </td>
             </tr>
@@ -91,3 +95,5 @@
 
 </body>
 </html>
+
+
